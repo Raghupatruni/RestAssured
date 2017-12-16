@@ -18,7 +18,8 @@ public class Main {
                 when().get("/maps/api/place/nearbysearch/json").
                 then().assertThat().statusCode(200).and().contentType(ContentType.JSON).
                 and().body("results[0].name", equalTo("Sydney")).and().
-                body("results[0].place_id", equalTo("ChIJP3Sa8ziYEmsRUKgyFmh9AQM"));
+                body("results[0].place_id", equalTo("ChIJP3Sa8ziYEmsRUKgyFmh9AQM")).and().
+                header("Server","pablo");
     }
 
 }
